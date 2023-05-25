@@ -6,7 +6,10 @@ $jumanji = new Movie('Jumanji', 90, 'https://www.viaggioff.it/wp-content/uploads
 
 $hungergames = new Movie('Hunger Games', 130, 'https://images.alphacoders.com/273/273893.jpg');
 
-
+$movies = [
+  $jumanji,
+  $hungergames
+];
 
 ?>
 
@@ -28,15 +31,17 @@ $hungergames = new Movie('Hunger Games', 130, 'https://images.alphacoders.com/27
 <main>
   <div class="container">
     <div class="row row-cols-3">
+      <?php foreach($movies as $movie): ?>
       <div class="col p-4">
         <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
+          <img src="<?php echo $movie->poster ?>" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h5 class="card-title"><?php echo $movie->title ?></h5>
+            <p class="card-text"><?php echo $movie->duration ?> min</p>
           </div>
         </div>
       </div>
+      <?php endforeach; ?>
     </div>
   </div>
 </main>
