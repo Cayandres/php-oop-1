@@ -11,4 +11,8 @@ class Movie{
     $this->duration = $_duration;
     $this->poster = $_poster;
   }
+
+  public function getInfo(){
+    return 'Titolo: ' . $this->title . ' - Durata:' . $this->duration . ' minuti';
+  }
 }
